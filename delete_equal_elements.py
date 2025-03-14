@@ -8,17 +8,17 @@ def delete_equal_elements(n, array):
         if array[i] == array[i-1]:
             array.remove(array[i])
             array.append('_')
-        elif array[i] != array[i-1]:
+        else:
             i += 1
-    # array.append(n)
     return array
 
 
 if __name__ == '__main__':
     with open('input.txt', 'r') as file_in:
-        n = int(file_in.readline())
-        array = file_in.readline().split(' ')
-    # n = 10
-    # array = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-    result = delete_equal_elements(n, array)
-    print(result)
+        a = int(file_in.readline())
+        numbers = list(map(int, file_in.readline().split(' ')))
+    # a = int(input())
+    # numbers = list(map(int, input().split(' ')))
+    result = delete_equal_elements(a, numbers)
+    for i in range(a):
+        print(f'{result[i]}', end=' ')
